@@ -3,7 +3,7 @@
 return [
     'type' => 'home',
     'name' => 'Home',
-    'view' => 'entries.home',
+    'view' => 'home',
     'single' => true,
     'fields' => [
         [
@@ -19,6 +19,10 @@ return [
         [
             'key' => 'body',
             'type' => 'textarea',
+        ],
+        [
+            'key' => 'link',
+            'type' => 'text',
         ],
     ],
 ];
