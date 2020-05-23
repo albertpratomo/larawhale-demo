@@ -2,6 +2,19 @@
 
 use Illuminate\Support\Str;
 
+// Prepare ClearDB connection variables.
+if (
+    env('DB_CONNECTION') === 'cleardb'
+    && $cleardb_url = env('CLEARDB_DATABASE_URL')
+) {
+    $cleardb_url = parse_url($cleardb_url);
+    
+    $cleardb_host = $cleardb_url['host'];
+    $cleardb_username = $cleardb_url['user'];
+    $cleardb_password = $cleardb_url['pass'];
+    $cleardb_database = substr($cleardb_url['path'], 1);
+}
+
 return [
 
     /*
@@ -89,6 +102,17 @@ return [
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
+        ],
+
+        'cleardb' => [
+            'driver' => 'mysql',
+            'host' => $cleardb_host,
+            'database' => $cleardb_database,
+            'username' => $cleardb_username,
+            'password' => $cleardb_password,
+            'charset' => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix' => '',
         ],
 
     ],
