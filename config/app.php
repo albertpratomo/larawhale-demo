@@ -165,6 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
+        LaraWhale\Cms\Providers\CmsServiceProvider::class,
 
         /*
          * Application Service Providers...
