@@ -1,5 +1,5 @@
 {
-    "name": "larawhale-demo",
+    "name": "larawhale/demo",
     "type": "project",
     "description": "A usage demo of Larawhale CMS.",
     "keywords": [
@@ -13,8 +13,9 @@
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^6.3",
-        "laravel/framework": "^7.0",
-        "laravel/tinker": "^2.0"
+        "laravel/framework": "^7.12",
+        "laravel/tinker": "^2.0",
+        "larawhale/cms" : "dev-master"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
@@ -23,6 +24,12 @@
         "nunomaduro/collision": "^4.1",
         "phpunit/phpunit": "^8.5"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/larawhale/cms"
+        }
+    ],
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
